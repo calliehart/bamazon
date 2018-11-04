@@ -68,8 +68,9 @@ var connection = mysql.createConnection({
                     console.log(chalk.blueBright(`_____________________________________\n`));
 
                     let newQuantity = res[0].stock_quantity - quantityWanted;
+                    let totalCost = res[0].price * quantityWanted;
 
-                    updateProduct(newQuantity, selectedItem);
+                    updateProduct(newQuantity, selectedItem, totalCost);
                     
                 };
             });
@@ -77,7 +78,7 @@ var connection = mysql.createConnection({
         });
      };
 
-     function updateProduct(newQuantity, selectedItem) {
+     function updateProduct(newQuantity, selectedItem, totalCost) {
         let query = connection.query(
             "UPDATE products SET ? WHERE ?",
             [
@@ -92,6 +93,7 @@ var connection = mysql.createConnection({
                 //console.log(res);
                 //console.log(res[0].affectedRows + " products updated!\n");
                 console.log("Order confirmed.");
+                console.log("Your total is: $" + totalCost);
                 setTimeout(start, 2500);
             }
           );
