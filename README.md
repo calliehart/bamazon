@@ -2,7 +2,7 @@
 
 ## Description
 
-This app runs on the command line using node and connects to a MySQL database. It shows you a table of items with information about each and prompts you to endter an item number to purchase. Once you have chosen an item it asks for a quantity. If that quantity is available, it shows you the total cost of the transaction and updates the table to reflect the new quantities available. 
+This app runs on the command line using node and connects to a MySQL database. It shows you a table of items with information about each and prompts you to enter an item number to purchase. Once you have chosen an item it asks for a quantity. If that quantity is available, it shows you the total cost of the transaction and updates the table to reflect the new quantities available. 
 
 Prompts:
 
